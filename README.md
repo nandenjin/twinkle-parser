@@ -23,5 +23,39 @@ yarn
 yarn run parse data_from_kdb.csv
 ```
 
+## Output Format
+```js
+{
+  "COURSE_ID": {
+  
+    "title": "Twinkle",
+    
+    // Terms & Modules
+    // 0 = Spring A, 1 = Spring B, ...
+    "termStr": "春AB",
+    "terms": [ 0, 1 ],
+    
+    // Day & Period sets
+    "periodStr": "月1-3\n水4-6",
+    "periods": [
+      // [ Days( 0 = Sun. 1 = Mon. ... ), Periods ]
+      [ [ 1 ], [ 0, 1, 2 ] ],
+      [ [ 3 ], [ 4, 5, 6 ] ]
+    ],
+    
+    // Rooms
+    "rooms": [ "7A106", "7C202" ],
+    
+    // Instructors
+    "instructors": [ "筑波 太郎" ],
+    
+    // Overview & Remarks
+    "overview": "",
+    "remarks": ""
+    
+  }
+}
+```
+
 ## Contribution
 Issue or PR submissions are welcome.
