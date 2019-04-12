@@ -34,8 +34,10 @@ data.forEach( r => {
     const periodStr = r[ 6 ];
     let periods = [];
 
-    let rooms = r[ 7 ].split( /[,\n]/ );
+    let rooms = r[ 7 ].split( /[,\s]/ );
 
+    // NOTE: instructors cannot be splitted with \s because it matches
+    // separators of First name and Family name.
     const instructors = r[ 8 ].split( /[,\n]/ );
 
     const overview = r[ 9 ];
