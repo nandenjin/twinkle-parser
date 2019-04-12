@@ -18,10 +18,10 @@ function indexOfWithAssert( array, needle ) {
 }
 module.exports.indexOfWithAssert = indexOfWithAssert;
 
-function removeDuplications( array ) {
+function removeDuplication( array ) {
   return array.filter( ( x, i, self ) => indexOfWithAssert( self, x ) === i );
 }
-module.exports.removeDuplications = removeDuplications;
+module.exports.removeDuplication = removeDuplication;
 
 function isContinuousN( array ) {
   return array.every( ( x, i, self ) => {
@@ -33,6 +33,6 @@ function isContinuousN( array ) {
 module.exports.isContinuousN = isContinuousN;
 
 function union( a, b ) {
-  return removeDuplications( a.concat(b) );
+  return removeDuplication( a.concat(b) );
 }
 module.exports.union = union;

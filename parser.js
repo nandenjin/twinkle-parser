@@ -134,9 +134,9 @@ data.forEach( r => {
     }
 
     // Remove duplications
-    terms = arrayUtil.removeDuplications( terms );
-    periods = arrayUtil.removeDuplications( periods );
-    rooms = arrayUtil.removeDuplications( rooms );
+    terms = arrayUtil.removeDuplication( terms );
+    periods = arrayUtil.removeDuplication( periods );
+    rooms = arrayUtil.removeDuplication( rooms );
 
     output[ id ] = {
 
