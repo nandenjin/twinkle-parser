@@ -43,23 +43,31 @@ data.forEach( r => {
     const overview = r[ 9 ];
     const remarks = r[ 10 ];
 
-    termStr.split( '\n' ).forEach( term => {
+    termStr.split( '\n' ).forEach( ( term, i, self ) => {
 
-      if( term.match( /^春([ABC]+)$/ ) ){
+      if( term.match( /^春([ABC]+)(.*)$/ ) ){
 
         const mod = RegExp.$1;
+        const tail = RegExp.$2;
 
         if( mod.match( /A/ ) ) terms.push( 0 );
         if( mod.match( /B/ ) ) terms.push( 1 );
         if( mod.match( /C/ ) ) terms.push( 2 );
 
-      }else if( term.match( /^秋([ABC]+)$/ ) ){
+        // In case termStr does not delimitered collectry
+        if( tail.length > 0 ) self.splice( i + 1, 0, tail );
+
+      }else if( term.match( /^秋([ABC]+)(.*)$/ ) ){
 
         const mod = RegExp.$1;
+        const tail = RegExp.$2;
 
         if( mod.match( /A/ ) ) terms.push( 3 );
         if( mod.match( /B/ ) ) terms.push( 4 );
         if( mod.match( /C/ ) ) terms.push( 5 );
+
+        // In case termStr does not delimitered collectry
+        if( tail.length > 0 ) self.splice( i + 1, 0, tail );
 
       }else{
 
