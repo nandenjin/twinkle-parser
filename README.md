@@ -20,7 +20,7 @@ yarn
 
 ## Usage
 ```shell
-node parser.js data_from_kdb.csv
+yarn run parse data_from_kdb.csv
 ```
 
 ## Contribution

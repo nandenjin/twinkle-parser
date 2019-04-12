@@ -1,10 +1,12 @@
 {
   "name": "twins-to-gcal-util",
   "version": "0.0.1",
-  "description": "",
+  "description": "Parse CSV from https://kdb.tsukuba.ac.jp to structured JSON.",
   "main": "parser.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "yarn parse",
+    "parse": "node parser.js"
   },
   "author": "Kazumi Inada <hello@nandenjin.com>",
   "license": "MIT",
