@@ -3,6 +3,8 @@ const fs = require( 'fs' );
 const csvParse = require( 'csv-parse/lib/sync' );
 const Iconv = require( 'iconv' ).Iconv;
 
+const arrayUtil = require( './util/array' );
+
 const iconv = new Iconv( 'Shift_JIS', 'UTF-8//TRANSLIT//IGNORE');
 
 const filename = process.argv[ 2 ];
@@ -27,12 +29,12 @@ data.forEach( r => {
     const title = r[ 1 ];
 
     const termStr = r[ 5 ];
-    const terms = [];
+    let terms = [];
 
     const periodStr = r[ 6 ];
-    const periods = [];
+    let periods = [];
 
-    const rooms = r[ 7 ].split( /[,\n]/ );
+    let rooms = r[ 7 ].split( /[,\n]/ );
 
     const instructors = r[ 8 ].split( /[,\n]/ );
 
@@ -104,11 +106,35 @@ data.forEach( r => {
 
           }
 
+          ds.sort();
+          ps.sort();
+
           periods.push( [ ds, ps ] );
 
         } );
 
     } );
+
+    // Normalization
+    // Concat consequtive period expressions
+    for( let i = 0; i < periods.length; i++ ) {
+      let a = periods[i];
+      for( let j = i + 1; j < periods.length; j++ ) {
+        let b = periods[j];
+        if( arrayUtil.isEqual( a[0], b[0] ) ) {
+          const union = arrayUtil.union( a[1], b[1] );
+          if( arrayUtil.isContinuousN( union ) ) {
+            a[1] = union;
+            periods.splice( j, 1 );
+          }
+        }
+      }
+    }
+
+    // Remove duplications
+    terms = arrayUtil.removeDuplications( terms );
+    periods = arrayUtil.removeDuplications( periods );
+    rooms = arrayUtil.removeDuplications( rooms );
 
     output[ id ] = {
 
@@ -130,4 +156,3 @@ data.forEach( r => {
   } );
 
 process.stdout.write( JSON.stringify( output ) );
-
