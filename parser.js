@@ -45,26 +45,17 @@ data.forEach( r => {
 
     termStr.split( '\n' ).forEach( ( term, i, self ) => {
 
-      if( term.match( /^春([ABC]+)(.*)$/ ) ){
+      if( term.match( /^(春|秋)([ABC]+)(.*)$/ ) ){
 
-        const mod = RegExp.$1;
-        const tail = RegExp.$2;
+        const season = RegExp.$1;
+        const mod = RegExp.$2;
+        const tail = RegExp.$3;
 
-        if( mod.match( /A/ ) ) terms.push( 0 );
-        if( mod.match( /B/ ) ) terms.push( 1 );
-        if( mod.match( /C/ ) ) terms.push( 2 );
+        const termStartIndex = season === '春' ? 0 : 3;
 
-        // In case termStr does not delimitered collectry
-        if( tail.length > 0 ) self.splice( i + 1, 0, tail );
-
-      }else if( term.match( /^秋([ABC]+)(.*)$/ ) ){
-
-        const mod = RegExp.$1;
-        const tail = RegExp.$2;
-
-        if( mod.match( /A/ ) ) terms.push( 3 );
-        if( mod.match( /B/ ) ) terms.push( 4 );
-        if( mod.match( /C/ ) ) terms.push( 5 );
+        if( mod.match( /A/ ) ) terms.push( termStartIndex + 0 );
+        if( mod.match( /B/ ) ) terms.push( termStartIndex + 1 );
+        if( mod.match( /C/ ) ) terms.push( termStartIndex + 2 );
 
         // In case termStr does not delimitered collectry
         if( tail.length > 0 ) self.splice( i + 1, 0, tail );
