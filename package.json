@@ -2,11 +2,12 @@
   "name": "twinkle-parser",
   "version": "0.0.1",
   "description": "Parse CSV from https://kdb.tsukuba.ac.jp to structured JSON.",
-  "main": "parser.js",
+  "main": "dist/index.js",
+  "types": "dist/idnex.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run parse",
-    "parse": "node dist/parser.js",
+    "parse": "node dist/index.js",
     "build": "tsc",
     "prepare": "npm run build"
   },
