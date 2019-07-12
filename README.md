@@ -1,6 +1,9 @@
 <div align="center">
   <h1>twinkle-parser</h1>
   <p>
+    <a href="https://www.npmjs.com/package/twinkle-parser" target="_blank" rel="noopener">
+      <img alt="npm" src="https://img.shields.io/npm/v/twinkle-parser.svg">
+    </a>
     <a href="https://codeclimate.com/github/nandenjin/twinkle-parser/maintainability">
       <img src="https://api.codeclimate.com/v1/badges/77e6012b3b82e41c25be/maintainability" />
     </a>
