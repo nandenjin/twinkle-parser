@@ -1,38 +1,40 @@
 
-const fs = require( 'fs' );
-const csvParse = require( 'csv-parse/lib/sync' );
-const Iconv = require( 'iconv' ).Iconv;
+import * as fs from 'fs'
+import csvParse from 'csv-parse/lib/sync'
+import Iconv from 'iconv'
 
-const arrayUtil = require( './util/array' );
+import { KDBData } from '../types'
+import * as arrayUtil from './util/array'
 
 const iconv = new Iconv( 'Shift_JIS', 'UTF-8//TRANSLIT//IGNORE');
 
 const filename = process.argv[ 2 ];
 const csvData = iconv.convert( fs.readFileSync( filename ) ).toString();
 
-const output = {};
+const output: KDBData = {};
 
 const data = csvParse( csvData );
 
-const exceptions = {
-
+const exceptions: {
+  term: string[],
+  period: number[]
+} = {
   term: [],
   period: [],
-
 };
 
 const DAYS_STR_INDEX = [ '日', '月', '火', '水', '木', '金', '土' ];
 
-data.forEach( r => {
+data.forEach( (r: string[]) => {
 
     const id = r[ 0 ];
     const title = r[ 1 ];
 
     const termStr = r[ 5 ];
-    let terms = [];
+    let terms: number[] = [];
 
     const periodStr = r[ 6 ];
-    let periods = [];
+    let periods: number[][][] = [];
 
     let rooms = r[ 7 ].split( /[,\s]/ );
 
@@ -85,8 +87,8 @@ data.forEach( r => {
 
             if( pstr.match( /^,?([1-6])-([1-6]),?/ ) ){
 
-              const s = RegExp.$1 / 1 - 1;
-              const e = RegExp.$2 / 1 - 1;
+              const s = +RegExp.$1 - 1;
+              const e = +RegExp.$2 - 1;
 
               for( let i = s; i <= e && s <= e; i++ ) ps.push( i );
 
@@ -94,7 +96,7 @@ data.forEach( r => {
 
             }else if( pstr.match( /^,?([1-6]),?/ ) ){
 
-              const p = RegExp.$1 / 1 - 1;
+              const p = +RegExp.$1 - 1;
               ps.push( p );
 
               pstr = pstr.replace( new RegExp( `^${RegExp.lastMatch}` ), '' );
@@ -124,7 +126,7 @@ data.forEach( r => {
         let b = periods[j];
         if( arrayUtil.isEqual( a[0], b[0] ) ) {
           const union = arrayUtil.union( a[1], b[1] );
-          if( arrayUtil.isContinuousN( union ) ) {
+          if( arrayUtil.isConsecutiveN( union ) ) {
             a[1] = union;
             periods.splice( j, 1 );
           }
