@@ -11,16 +11,17 @@
   <p>Parse CSV from https://kdb.tsukuba.ac.jp to structured JSON.</p>
 </div>
 
-## Installation
-Node.js and Yarn are required.
+## Usage
+### From CLI 
 ```shell
-# Install dependencies
-yarn
+# In this repo directory
+yarn run parse data_from_kdb.csv
 ```
 
-## Usage
-```shell
-yarn run parse data_from_kdb.csv
+### As API
+```js
+const parser = require('twinkle-parser')
+const data = parser('CSV string here') // -> KDBData
 ```
 
 ## Output Format
@@ -55,6 +56,17 @@ yarn run parse data_from_kdb.csv
     
   }
 }
+```
+
+## TypeScipt Support
+TypeScript supported! 🎉
+
+```ts
+// This will be imported with types
+import parser from 'twinkle-parser'
+
+// And types for output data are also available
+import { KDBData, KDBCourse } from 'twinkle-parser'
 ```
 
 ## Contribution
