@@ -2,55 +2,54 @@ import { strict as assert } from 'assert'
 
 /**
  * Returns result of deep equal assestion
- * @param a 
- * @param b 
+ * @param a
+ * @param b
  */
-export function isEqual( a: any, b: any ): boolean {
-  try{
-    assert.deepStrictEqual( a, b );
-    return true;
-  }catch(e) {
-    return false;
+export function isEqual (a: any, b: any): boolean {
+  try {
+    assert.deepStrictEqual(a, b)
+    return true
+  } catch (e) {
+    return false
   }
 }
 
 /**
  * A extended version of array.indexOf with deep equal assertion
- * @param array 
- * @param needle 
+ * @param array
+ * @param needle
  */
-export function indexOfWithAssert<T>( array: Array<T>, needle: T ): number {
-  for( let i = 0; i < array.length; i++ ){
-    if( isEqual( array[i], needle ) ) return i;
+export function indexOfWithAssert<T> (array: Array<T>, needle: T): number {
+  for (let i = 0; i < array.length; i++) {
+    if (isEqual(array[i], needle)) { return i }
   }
-  return -1;
+  return -1
 }
 
 /**
  * Returns a copy of input array which is normalized with removing duplications
- * @param array 
+ * @param array
  */
-export function removeDuplication<T>( array: Array<T> ): Array<T> {
-  return array.filter( ( x, i, self ) => indexOfWithAssert( self, x ) === i );
+export function removeDuplication<T> (array: Array<T>): Array<T> {
+  return array.filter((x, i, self) => indexOfWithAssert(self, x) === i)
 }
 
 /**
  * Returns if the array are composed of elements of consecutive numbers
- * @param array 
+ * @param array
  */
-export function isConsecutiveN( array: number[] ): boolean {
-  return array.every( ( x, i, self ) => {
-    if( i === 0 ) return true;
-    if( self[i] - self[i-1] === 1 ) return true;
-    else return false;
-  } );
+export function isConsecutiveN (array: number[]): boolean {
+  return array.every((x, i, self) => {
+    if (i === 0) { return true }
+    if (self[i] - self[i - 1] === 1) { return true } else { return false }
+  })
 }
 
 /**
  * Returns union of two arrays a and b
- * @param a 
- * @param b 
+ * @param a
+ * @param b
  */
-export function union<T>( a: Array<T>, b: Array<T> ): Array<T> {
-  return removeDuplication( a.concat(b) );
+export function union<T> (a: Array<T>, b: Array<T>): Array<T> {
+  return removeDuplication(a.concat(b))
 }
