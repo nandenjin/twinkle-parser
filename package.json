@@ -9,6 +9,8 @@
     "start": "npm run parse",
     "parse": "node dist/index.js",
     "build": "tsc",
+    "lint": "eslint --ext ts,js --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext ts,js --ignore-path .gitignore .",
     "prepare": "npm run build"
   },
   "author": "Kazumi Inada <hello@nandenjin.com>",
@@ -18,8 +20,12 @@
     "iconv": "^2.3.1"
   },
   "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.0.1",
     "@types/iconv": "^2.1.16",
     "@types/node": "^12.6.2",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
     "typescript": "^3.5.3"
   }
 }
