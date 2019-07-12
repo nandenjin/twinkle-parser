@@ -1,5 +1,5 @@
 {
-  "name": "twins-to-gcal-util",
+  "name": "twinkle-parser",
   "version": "0.0.1",
   "description": "Parse CSV from https://kdb.tsukuba.ac.jp to structured JSON.",
   "main": "parser.js",
