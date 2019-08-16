@@ -671,10 +671,11 @@ iconv-lite@^0.4.24:
     safer-buffer ">= 2.1.2 < 3"
 
 iconv@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/iconv/-/iconv-2.3.1.tgz#61532dcab13d4c49766685dc05107f317f6da902"
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/iconv/-/iconv-2.3.4.tgz#790119c65fb97bde19154b4038b96618a5d95f19"
+  integrity sha512-v2Rree7xRtrC9o3Bi9nTNOKXvApmwLFdX50k72+K1W4mJ93LBdpaLcHcInYo9gr/GcQk8MFoCetrYRcb/o3RLg==
   dependencies:
-    nan "^2.11.1"
+    nan "^2.13.1"
     safer-buffer "^2.1.2"
 
 ignore@^4.0.6:
@@ -943,9 +944,10 @@ mute-stream@0.0.7:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
 
-nan@^2.11.1:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.11.1.tgz#90e22bccb8ca57ea4cd37cc83d3819b52eea6766"
+nan@^2.13.1:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
+  integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
 
 natural-compare@^1.4.0:
   version "1.4.0"
