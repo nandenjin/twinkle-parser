@@ -1,0 +1,16 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - uses: nuxt/actions-yarn@master
+    - name: Install dependencies
+      run: yarn
+    - name: Lint
+      run: yarn run lint
