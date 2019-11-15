@@ -8,6 +8,7 @@ module.exports = {
     '@nuxtjs'
   ],
   rules: {
+    'no-console': 0,
     '@typescript-eslint/no-unused-vars': 'error'
   }
 }
