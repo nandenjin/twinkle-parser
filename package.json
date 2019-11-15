@@ -4,10 +4,13 @@
   "description": "Parse CSV from https://kdb.tsukuba.ac.jp to structured JSON.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "twinkle-parser": "./bin/twinkle-parser.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run parse",
-    "parse": "node dist/index.js",
+    "parse": "node bin/twinkle-parser.js",
     "build": "tsc",
     "lint": "eslint --ext ts,js --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext ts,js --ignore-path .gitignore .",
