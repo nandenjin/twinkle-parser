@@ -7,7 +7,7 @@ import { KDBData, KDBCourse } from '../types'
 
 // Import utils
 import * as arrayUtil from './util/array'
-const Iconv = require('Iconv').Iconv
+const Iconv = require('iconv').Iconv
 
 // Export data types
 export { KDBData, KDBCourse }
