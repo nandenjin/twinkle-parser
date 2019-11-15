@@ -17,11 +17,27 @@
 ## Usage
 
 ### From CLI 
+#### Quick use
 ```shell
-# * Install dependencies
+npx twinkle-parser data_from_kdb.csv
+```
+
+#### Global Install
+```shell
+# NPM
+npm install -g twinkle-parser
+
+# yarn
+yarn add --global twinkle-parser
+```
+
+#### Use inside repo
+```shell
+# * Inside repo directory
+# Install dependencies
 yarn
 
-# * Parse
+# Parse
 yarn run parse data_from_kdb.csv
 ```
 
@@ -29,17 +45,28 @@ yarn run parse data_from_kdb.csv
 ```
 # * Installation
 
-# NPM
+# Install with NPM
 npm install twinkle-parser
 
-# yarn
+# Install with yarn
 yarn add twinkle-parser
+
+# Then
+twinkle-parser data_from_kdb.csv
 ```
 
 ```js
 const parser = require('twinkle-parser')
 const data = parser('CSV string here') // -> KDBData
 ```
+
+### CLI options
+
+| Option |  |
+---------|---
+| `-o PATH` / `--output PATH` | Export result to a file at the `PATH` instead of to stdout. |
+| `-p` / `--pretty` | Prettify json output. |
+| `-h` / `--help` | Print help & usage. |
 
 ## Output Format
 ```js
