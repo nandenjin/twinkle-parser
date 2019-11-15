@@ -15,13 +15,27 @@
 </div>
 
 ## Usage
+
 ### From CLI 
 ```shell
-# In this repo directory
+# * Install dependencies
+yarn
+
+# * Parse
 yarn run parse data_from_kdb.csv
 ```
 
 ### As API
+```
+# * Installation
+
+# NPM
+npm install twinkle-parser
+
+# yarn
+yarn add twinkle-parser
+```
+
 ```js
 const parser = require('twinkle-parser')
 const data = parser('CSV string here') // -> KDBData
