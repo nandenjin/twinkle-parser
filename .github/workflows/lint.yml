@@ -9,8 +9,26 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - uses: nuxt/actions-yarn@master
-    - name: Install dependencies
-      run: yarn
+
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        version: 12.x 
+        
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+
+    - uses: actions/cache@v2
+      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+ 
+    - name: Install and build
+      run: yarn --frozen-lockfile
+      
     - name: Lint
       run: yarn run lint
