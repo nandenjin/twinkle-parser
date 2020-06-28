@@ -43,7 +43,7 @@ export default function parse (csvData: string): KDBData {
 
     // NOTE: instructors cannot be splitted with \s because it matches
     // separators of First name and Family name.
-    const instructors = r[ 8 ].split(/[,\n]/)
+    let instructors = r[ 8 ].split(/[,\n]/)
 
     const overview = r[ 9 ]
     const remarks = r[ 10 ]
@@ -123,6 +123,10 @@ export default function parse (csvData: string): KDBData {
     terms = arrayUtil.removeDuplication(terms)
     periods = arrayUtil.removeDuplication(periods)
     rooms = arrayUtil.removeDuplication(rooms)
+
+    // Remove empty string
+    rooms = rooms.filter(room => !room.match(/^\s*$/))
+    instructors = instructors.filter(room => !room.match(/^\s*$/))
 
     output[ id ] = {
 

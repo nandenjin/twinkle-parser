@@ -18,7 +18,7 @@
     "esModuleInterop": true,
     "outDir": "dist",
     "declaration": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": true
   },
   "include": [
     "src/*"

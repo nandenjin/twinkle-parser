@@ -7,6 +7,9 @@
     <a href="https://codeclimate.com/github/nandenjin/twinkle-parser/maintainability">
       <img src="https://api.codeclimate.com/v1/badges/77e6012b3b82e41c25be/maintainability" />
     </a>
+    <a href="https://codecov.io/gh/nandenjin/twinkle-parser">
+      <img src="https://codecov.io/gh/nandenjin/twinkle-parser/branch/dev/graph/badge.svg" />
+    </a>
     <span>
       <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat">
     </span>
