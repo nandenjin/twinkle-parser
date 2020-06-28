@@ -1,4 +1,10 @@
-import { isEqual, indexOfWithAssert, removeDuplication, isConsecutiveN, union } from '../../src/util/array'
+import {
+  isEqual,
+  indexOfWithAssert,
+  removeDuplication,
+  isConsecutiveN,
+  union,
+} from '../../src/util/array'
 
 describe('isEqual', () => {
   test('Returns true for same constants', () => {
@@ -21,7 +27,9 @@ describe('isEqual', () => {
     expect(isEqual(['ABC', 'DEF', 'GH'], ['ABC', 'DEF', 'GH'])).toBe(true)
     expect(isEqual([true, false], [true, false])).toBe(true)
     expect(isEqual([true, 'ABC'], [true, 'ABC'])).toBe(true)
-    expect(isEqual({ a: 0, b: true, c: 'ABC' }, { a: 0, b: true, c: 'ABC' })).toBe(true)
+    expect(
+      isEqual({ a: 0, b: true, c: 'ABC' }, { a: 0, b: true, c: 'ABC' })
+    ).toBe(true)
   })
 
   test('Returns false for arrays/objects with different values', () => {
@@ -32,7 +40,9 @@ describe('isEqual', () => {
     expect(isEqual(['ABC', 'DEF', 'GH'], ['ABC', '', 'GH'])).toBe(false)
     expect(isEqual([true, false], [false, true])).toBe(false)
     expect(isEqual([false, 'ABC'], [null, 'ABC'])).toBe(false)
-    expect(isEqual({ a: 0, b: null, c: 'ABC' }, { a: 0, b: false, c: 'ABC' })).toBe(false)
+    expect(
+      isEqual({ a: 0, b: null, c: 'ABC' }, { a: 0, b: false, c: 'ABC' })
+    ).toBe(false)
   })
 })
 
@@ -56,14 +66,24 @@ describe('removeDuplication', () => {
   test('Removes duplicated elements and preserve first one element', () => {
     expect(removeDuplication([0, 0, 0, 0])).toMatchObject([0])
     expect(removeDuplication([0, 1, 0, 1])).toMatchObject([0, 1])
-    expect(removeDuplication([true, false, null, null])).toMatchObject([true, false, null])
-    expect(removeDuplication([{ x: 1 }, { y: 2 }, { z: 3 }, { x: 1 }])).toMatchObject([{ x: 1 }, { y: 2 }, { z: 3 }])
+    expect(removeDuplication([true, false, null, null])).toMatchObject([
+      true,
+      false,
+      null,
+    ])
+    expect(
+      removeDuplication([{ x: 1 }, { y: 2 }, { z: 3 }, { x: 1 }])
+    ).toMatchObject([{ x: 1 }, { y: 2 }, { z: 3 }])
   })
 
   test('Do nothing when no elements are duplicated', () => {
     expect(removeDuplication([0, 1, 2, 3])).toMatchObject([0, 1, 2, 3])
     expect(removeDuplication([true, false])).toMatchObject([true, false])
-    expect(removeDuplication([{ x: 1 }, { y: 2 }, { z: 3 }])).toMatchObject([{ x: 1 }, { y: 2 }, { z: 3 }])
+    expect(removeDuplication([{ x: 1 }, { y: 2 }, { z: 3 }])).toMatchObject([
+      { x: 1 },
+      { y: 2 },
+      { z: 3 },
+    ])
   })
 })
 
@@ -86,6 +106,8 @@ describe('union', () => {
   test('Retrns union, non-duplicated arrays', () => {
     expect(union([0, 1, 2], [3, 4, 5])).toMatchObject([0, 1, 2, 3, 4, 5])
     expect(union([0, 1, 2], [1, 2, 3])).toMatchObject([0, 1, 2, 3])
-    expect(union([{}, { x: 1 }, { y: 2 }], [{ y: 2 }, { x: 1 }, {}])).toMatchObject([{}, { x: 1 }, { y: 2 }])
+    expect(
+      union([{}, { x: 1 }, { y: 2 }], [{ y: 2 }, { x: 1 }, {}])
+    ).toMatchObject([{}, { x: 1 }, { y: 2 }])
   })
 })

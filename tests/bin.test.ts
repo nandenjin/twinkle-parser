@@ -5,10 +5,10 @@ import { KDBData } from '../src'
 const pathToBin = path.resolve(__dirname, '../bin/twinkle-parser.js')
 
 describe('CLI', () => {
-  test('Basic', (done) => {
+  test('Basic', done => {
     const pathToSample = path.resolve(__dirname, './data/sample.csv')
     const parsed: KDBData = {
-      'AB10001': {
+      AB10001: {
         title: '授業名',
         termStr: '春AB',
         terms: [0, 1],
@@ -17,9 +17,9 @@ describe('CLI', () => {
         rooms: ['教室名'],
         instructors: ['教員名'],
         overview: 'ここには授業概要が入る。',
-        remarks: 'ここには備考が入る。'
+        remarks: 'ここには備考が入る。',
       },
-      'AB10501': {
+      AB10501: {
         title: '授業名',
         termStr: '秋BC',
         terms: [4, 5],
@@ -28,8 +28,8 @@ describe('CLI', () => {
         rooms: ['教室名'],
         instructors: ['教員名1', '教員名2'],
         overview: 'ここには授業概要が入る。',
-        remarks: 'ここには備考が入る。'
-      }
+        remarks: 'ここには備考が入る。',
+      },
     }
 
     exec(pathToBin + ' ' + pathToSample, (error, stdout, stderr) => {
