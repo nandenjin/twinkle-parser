@@ -4,11 +4,28 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser'
   },
+  env: {
+    'node': true,
+    'jest/globals': true
+  },
   extends: [
-    '@nuxtjs'
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/@typescript-eslint'
+  ],
+  plugins: [
+    'jest',
+    'prettier'
   ],
   rules: {
-    'no-console': 0,
-    '@typescript-eslint/no-unused-vars': 'error'
+    'no-console': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'prettier/prettier': ['error', {
+      semi: false,
+      singleQuote: true,
+      arrowParens: 'avoid'
+    }]
   }
 }
