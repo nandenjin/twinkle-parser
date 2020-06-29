@@ -57,8 +57,8 @@ yarn add twinkle-parser
 ```
 
 ```js
-const parser = require('twinkle-parser')
-const data = parser('CSV string here') // -> KDBData
+const parse = require('twinkle-parser')
+const data = parse('CSV string here') // -> KDBData
 ```
 
 ### CLI options
@@ -108,7 +108,7 @@ TypeScript supported! 🎉
 
 ```ts
 // This will be imported with types
-import parser from 'twinkle-parser'
+import parse from 'twinkle-parser'
 
 // And types for output data are also available
 import { KDBData, KDBCourse } from 'twinkle-parser'

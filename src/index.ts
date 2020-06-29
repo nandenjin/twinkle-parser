@@ -65,7 +65,7 @@ export default function parse(csvData: string): KDBData {
           terms.push(termStartIndex + 2)
         }
 
-        // In case termStr does not delimitered collectry
+        // In case termStr does not delimitered correctry
         if (tail.length > 0) {
           self.splice(i + 1, 0, tail)
         }
