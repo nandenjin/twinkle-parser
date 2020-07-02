@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'jest', 'prettier'],
   parserOptions: {
     parser: '@typescript-eslint/parser',
   },
@@ -14,7 +14,6 @@ module.exports = {
     'prettier',
     'prettier/@typescript-eslint',
   ],
-  plugins: ['jest', 'prettier'],
   rules: {
     'no-console': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
