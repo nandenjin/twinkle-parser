@@ -98,8 +98,3 @@ jobs:
 
     - name: Install dependencies and build
       run: yarn --frozen-lockfile
-
-    - name: Publish
-      run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

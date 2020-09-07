@@ -14,7 +14,8 @@
     "lint": "eslint --ext ts,js --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext ts,js --ignore-path .gitignore .",
     "test": "jest",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "release": "shipjs prepare"
   },
   "author": "Kazumi Inada <hello@nandenjin.com>",
   "license": "MIT",
@@ -35,6 +36,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
+    "shipjs": "0.21.0",
     "ts-jest": "^26.1.1",
     "typescript": "^3.5.3"
   }
