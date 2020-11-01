@@ -6,9 +6,12 @@ on:
 jobs:
   manual_prepare:
     if: |
-      github.event_name == 'issue_comment' &&
-      (github.event.comment.author_association == 'member' || github.event.comment.author_association == 'owner') &&
-      startsWith(github.event.comment.body, '@shipjs prepare')
+      github.event_name == 'workflow_dispatch' || (
+        github.event_name == 'issue_comment' && (
+          github.event.comment.author_association == 'member'
+          || github.event.comment.author_association == 'owner'
+        ) && startsWith(github.event.comment.body, '@shipjs prepare')
+      )
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -31,7 +34,7 @@ jobs:
           SLACK_INCOMING_HOOK: ${{ secrets.SLACK_INCOMING_HOOK }}
 
   create_done_comment:
-    if: success()
+    if: github.event_name == 'issue_comment' && success()
     needs: manual_prepare
     runs-on: ubuntu-latest
     steps:
@@ -42,7 +45,7 @@ jobs:
           args: comment "@${{ github.actor }} `shipjs prepare` done"
 
   create_fail_comment:
-    if: cancelled() || failure()
+    if: github.event_name == 'issue_comment' && (cancelled() || failure())
     needs: manual_prepare
     runs-on: ubuntu-latest
     steps:
