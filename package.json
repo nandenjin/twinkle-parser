@@ -20,6 +20,7 @@
   "author": "Kazumi Inada <hello@nandenjin.com>",
   "license": "MIT",
   "dependencies": {
+    "consola": "^2.15.0",
     "csv-parse": "^4.4.5",
     "iconv-lite": "^0.6.2",
     "minimist": "^1.2.0"

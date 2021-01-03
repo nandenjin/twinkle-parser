@@ -4,6 +4,7 @@
 const fs = require('fs')
 const path = require('path')
 const parseArgs = require('minimist')
+const consola = require('consola')
 const iconv = require('iconv-lite')
 const { default: parse, FIELD_KEYS } = require('../dist/index.js')
 
@@ -11,7 +12,7 @@ const argv = parseArgs(process.argv.slice(2))
 
 // * Help
 if (argv.h || argv.help) {
-  console.log(
+  consola.log(
     `* twinkle-parser
 Usage: twinkle-parser PATH_TO_SOURCE_CSV
 
@@ -35,8 +36,8 @@ const fields = argv.fields ? argv.fields.split(',') : FIELD_KEYS
 
 for (const key of fields) {
   if (!FIELD_KEYS.includes(key)) {
-    console.error(`ERROR: Unknown field "${key}"`)
-    console.error(`Supported fields: ${FIELD_KEYS.join(',')}`)
+    consola.error(`Unknown field "${key}"`)
+    consola.info(`Supported fields: ${FIELD_KEYS.join(',')}`)
     process.exit(1)
   }
 }
@@ -45,8 +46,8 @@ for (const key of fields) {
 const outPath = argv.o || argv.out
 
 if (!filename) {
-  console.error('ERROR: Filename is required')
-  console.error('Add -h / --help option to see usage')
+  consola.fatal('Filename is required')
+  consola.info('Add -h / --help option to see usage')
   process.exit(1)
 }
 
