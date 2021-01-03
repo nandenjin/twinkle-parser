@@ -21,7 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "csv-parse": "^4.4.5",
-    "iconv": "^3.0.0",
+    "iconv-lite": "^0.6.2",
     "minimist": "^1.2.0"
   },
   "devDependencies": {
