@@ -16,7 +16,7 @@ export { KDBData, KDBCourse }
 export default function parse(csvData: string): KDBData {
   const output: KDBData = {}
 
-  const data = csvParse(csvData)
+  const data = csvParse(csvData) as string[][]
 
   const exceptions: {
     term: string[]
@@ -28,8 +28,12 @@ export default function parse(csvData: string): KDBData {
 
   const DAYS_STR_INDEX = ['日', '月', '火', '水', '木', '金', '土']
 
-  data.forEach((r: string[]) => {
+  for (const r of data) {
     const id = r[0]
+
+    // Skip headline
+    if (id === '科目番号') continue
+
     const title = r[1]
 
     const termStr = r[5]
@@ -155,7 +159,7 @@ export default function parse(csvData: string): KDBData {
       overview,
       remarks,
     }
-  })
+  }
 
   return output
 }

@@ -39,7 +39,9 @@ if (!filename) {
   process.exit(1)
 }
 
-const csvData = iconv.decode(fs.readFileSync(filename), 'Shift_JIS')
+const csvData = iconv
+  .decode(fs.readFileSync(filename), 'Shift_JIS')
+  .replace(/\s+$/gm, '')
 
 const result = parse(csvData)
 const outputJSON = JSON.stringify(result, null, prettyFlag ? 2 : 0)
