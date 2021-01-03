@@ -4,10 +4,9 @@
 const fs = require('fs')
 const path = require('path')
 const parseArgs = require('minimist')
-const Iconv = require('iconv').Iconv
+const iconv = require('iconv-lite')
 const parse = require('../dist/index.js').default
 
-const iconv = new Iconv('Shift_JIS', 'UTF-8//TRANSLIT//IGNORE')
 const argv = parseArgs(process.argv.slice(2))
 
 // * Help
@@ -40,7 +39,7 @@ if (!filename) {
   process.exit(1)
 }
 
-const csvData = iconv.convert(fs.readFileSync(filename)).toString()
+const csvData = iconv.decode(fs.readFileSync(filename), 'Shift_JIS')
 
 const result = parse(csvData)
 const outputJSON = JSON.stringify(result, null, prettyFlag ? 2 : 0)
