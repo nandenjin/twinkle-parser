@@ -9,6 +9,21 @@ import * as arrayUtil from './util/array'
 // Export data types
 export { KDBData, KDBCourse }
 
+export const FIELD_KEYS = [
+  'title',
+  'termStr',
+  'terms',
+
+  'periodStr',
+  'periods',
+
+  'rooms',
+  'instructors',
+
+  'overview',
+  'remarks',
+]
+
 /**
  * Parse csv string to structured KDBData
  * @param csvData

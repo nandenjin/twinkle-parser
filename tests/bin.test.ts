@@ -44,6 +44,32 @@ describe('CLI', () => {
     })
   })
 
+  test('Basic with fields option', done => {
+    const pathToSample = path.resolve(__dirname, './data/sample.csv')
+    const parsed = {
+      AB10001: {
+        title: '授業名',
+      },
+      AB10501: {
+        title: '授業名',
+      },
+    }
+
+    exec(
+      pathToBin + ' ' + pathToSample + ' --fields title',
+      (error, stdout, stderr) => {
+        if (error) throw error
+        try {
+          expect(JSON.parse(stdout)).toMatchObject(parsed)
+          expect(stderr).toBe('')
+          done()
+        } catch (e) {
+          done(e)
+        }
+      }
+    )
+  })
+
   test('Basic with data with headline', done => {
     const pathToSample = path.resolve(
       __dirname,
