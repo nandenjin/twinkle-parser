@@ -17,13 +17,5 @@ module.exports = {
         'no-console': 'off',
         '@typescript-eslint/no-unused-vars': 'error',
         '@typescript-eslint/explicit-function-return-type': 'off',
-        'prettier/prettier': [
-            'error',
-            {
-                semi: false,
-                singleQuote: true,
-                arrowParens: 'avoid',
-            },
-        ],
     },
 }

@@ -14,6 +14,7 @@
     "lint": "eslint --ext ts,js --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext ts,js --ignore-path .gitignore .",
     "test": "jest",
+    "format": "prettier --write \"**/*.{ts,js,json,md,yml,yaml}\"",
     "prepare": "npm run build",
     "release": "shipjs prepare"
   },
