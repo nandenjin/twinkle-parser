@@ -5,9 +5,7 @@
     "charset": "utf8",
     "module": "commonjs",
     "target": "es2018",
-    "lib": [
-        "es2018"
-    ],
+    "lib": ["es2018"],
     "noImplicitAny": true,
     "removeComments": true,
     "strictNullChecks": true,
@@ -20,14 +18,7 @@
     "declaration": true,
     "noImplicitReturns": true
   },
-  "include": [
-    "src/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "typeRoots": [
-      "types",
-      "node_modules/@types"
-  ]
+  "include": ["src/*"],
+  "exclude": ["node_modules"],
+  "typeRoots": ["types", "node_modules/@types"]
 }

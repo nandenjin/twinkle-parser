@@ -19,13 +19,16 @@
 
 ## Usage
 
-### From CLI 
+### From CLI
+
 #### Quick use
+
 ```shell
 npx twinkle-parser data_from_kdb.csv
 ```
 
 #### Global Install
+
 ```shell
 # Install with NPM
 npm install -g twinkle-parser
@@ -38,6 +41,7 @@ twinkle-parser data_from_kdb.csv
 ```
 
 #### Use inside repo
+
 ```shell
 # * Inside repo directory
 # Install dependencies
@@ -48,6 +52,7 @@ yarn run parse data_from_kdb.csv
 ```
 
 ### As API
+
 ```shell
 # Install with NPM
 npm install twinkle-parser
@@ -63,25 +68,26 @@ const data = parse('CSV string here') // -> KDBData
 
 ### CLI options
 
-| Option |  |
----------|---
-| `-o PATH` / `--output PATH` | Export result to a file at the `PATH` instead of to stdout. |
-| `-p` / `--pretty` | Prettify json output. |
-| `--fields` | Fields to be included (comma-separated, specifing all if not set) |
-| `-h` / `--help` | Print help & usage. |
+| Option                      |                                                                   |
+| --------------------------- | ----------------------------------------------------------------- |
+| `-o PATH` / `--output PATH` | Export result to a file at the `PATH` instead of to stdout.       |
+| `-p` / `--pretty`           | Prettify json output.                                             |
+| `--fields`                  | Fields to be included (comma-separated, specifing all if not set) |
+| `-h` / `--help`             | Print help & usage.                                               |
 
 ## Output Format
+
 ```js
 {
   "COURSE_ID": {
-  
+
     "title": "Twinkle",
-    
+
     // Terms & Modules
     // 0 = Spring A, 1 = Spring B, ...
     "termStr": "春AB",
     "terms": [ 0, 1 ],
-    
+
     // Day & Period sets
     "periodStr": "月1-3\n水4-6",
     "periods": [
@@ -89,22 +95,23 @@ const data = parse('CSV string here') // -> KDBData
       [ [ 1 ], [ 0, 1, 2 ] ],
       [ [ 3 ], [ 4, 5, 6 ] ]
     ],
-    
+
     // Rooms
     "rooms": [ "7A106", "7C202" ],
-    
+
     // Instructors
     "instructors": [ "筑波 太郎" ],
-    
+
     // Overview & Remarks
     "overview": "",
     "remarks": ""
-    
+
   }
 }
 ```
 
 ## TypeScipt Support
+
 TypeScript supported! 🎉
 
 ```ts
@@ -116,4 +123,5 @@ import { KDBData, KDBCourse } from 'twinkle-parser'
 ```
 
 ## Contribution
+
 Issue or PR submissions are welcome.
