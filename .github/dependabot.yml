@@ -12,4 +12,7 @@ updates:
     open-pull-requests-limit: 25
     assignees:
     - "nandenjin"
+    labels:
+    - "dependencies"
+    - "automerge"
     
