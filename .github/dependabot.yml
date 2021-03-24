@@ -14,4 +14,3 @@ updates:
       - 'nandenjin'
     labels:
     - 'dependencies'
-    - 'automerge'
