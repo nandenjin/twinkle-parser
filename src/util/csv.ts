@@ -10,7 +10,7 @@ export const repairCSV = (csvString: string) =>
     let repairedValue = value.replace(
       /"/g,
       (_: unknown, __: unknown, i: number) => {
-        if (value.slice(i - 1).match(/^.?""/)) {
+        if (value.slice(i - 1).match(/^[\s\S]?""/)) {
           return '"'
         }
         return '""'
