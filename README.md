@@ -74,6 +74,7 @@ const data = parse('CSV string here') // -> KDBData
 | `-p` / `--pretty`           | Prettify json output.                                             |
 | `--fields`                  | Fields to be included (comma-separated, specifing all if not set) |
 | `-h` / `--help`             | Print help & usage.                                               |
+| `-v` / `--version`          | Print version info
 
 ## Output Format
 

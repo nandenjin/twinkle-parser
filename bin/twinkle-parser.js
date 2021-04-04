@@ -21,8 +21,14 @@ Options:
 -p / --pretty : Prettify output
 --fields : Fields to be included (comma-separated, specifing all if not set)
 -h / --help : See this help
+-v / --version : Print version info
 `
   )
+  process.exit(0)
+}
+
+else if (argv.v || argv.version) {
+  consola.log('v' + process.env.npm_package_version)
   process.exit(0)
 }
 
