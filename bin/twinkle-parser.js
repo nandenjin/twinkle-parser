@@ -6,6 +6,7 @@ const path = require('path')
 const parseArgs = require('minimist')
 const consola = require('consola')
 const iconv = require('iconv-lite')
+const version = require('../package.json').version
 const { default: parse, FIELD_KEYS } = require('../dist/index.js')
 
 const argv = parseArgs(process.argv.slice(2))
@@ -28,7 +29,7 @@ Options:
 }
 
 else if (argv.v || argv.version) {
-  consola.log('v' + process.env.npm_package_version)
+  consola.log('v' + version)
   process.exit(0)
 }
 
