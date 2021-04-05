@@ -6,6 +6,7 @@ const path = require('path')
 const parseArgs = require('minimist')
 const consola = require('consola')
 const iconv = require('iconv-lite')
+const version = require('../package.json').version
 const { default: parse, FIELD_KEYS } = require('../dist/index.js')
 
 const argv = parseArgs(process.argv.slice(2))
@@ -21,8 +22,14 @@ Options:
 -p / --pretty : Prettify output
 --fields : Fields to be included (comma-separated, specifing all if not set)
 -h / --help : See this help
+-v / --version : Print version info
 `
   )
+  process.exit(0)
+}
+
+else if (argv.v || argv.version) {
+  consola.log('v' + version)
   process.exit(0)
 }
 
