@@ -22,22 +22,62 @@ describe('parse', () => {
   })
 
   test('Multi terms', () => {
-    const csv =
-      '"0000000","","","","","秋ABC","","","","","","","","","0000000","",""'
-    const parsed: KDBData = {
-      '0000000': {
-        title: '',
-        termStr: '秋ABC',
-        terms: [3, 4, 5],
-        periodStr: '',
-        periods: [],
-        rooms: [],
-        instructors: [],
-        overview: '',
-        remarks: '',
-      },
+    {
+      const csv =
+        '"0000000","","","","","秋ABC","","","","","","","","","0000000","",""'
+      const parsed: KDBData = {
+        '0000000': {
+          title: '',
+          termStr: '秋ABC',
+          terms: [3, 4, 5],
+          periodStr: '',
+          periods: [],
+          rooms: [],
+          instructors: [],
+          overview: '',
+          remarks: '',
+        },
+      }
+      expect(parse(csv)).toMatchObject(parsed)
     }
-    expect(parse(csv)).toMatchObject(parsed)
+
+    {
+      const csv =
+        '"0000000","","","","","秋AB\n秋C","","","","","","","","","0000000","",""'
+      const parsed: KDBData = {
+        '0000000': {
+          title: '',
+          termStr: '秋AB\n秋C',
+          terms: [3, 4, 5],
+          periodStr: '',
+          periods: [],
+          rooms: [],
+          instructors: [],
+          overview: '',
+          remarks: '',
+        },
+      }
+      expect(parse(csv)).toMatchObject(parsed)
+    }
+
+    {
+      const csv =
+        '"0000000","","","","","秋AB 秋C","","","","","","","","","0000000","",""'
+      const parsed: KDBData = {
+        '0000000': {
+          title: '',
+          termStr: '秋AB 秋C',
+          terms: [3, 4, 5],
+          periodStr: '',
+          periods: [],
+          rooms: [],
+          instructors: [],
+          overview: '',
+          remarks: '',
+        },
+      }
+      expect(parse(csv)).toMatchObject(parsed)
+    }
   })
 
   test('Multi periods', () => {
