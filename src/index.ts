@@ -66,7 +66,7 @@ export default function parse(csvData: string): KDBData {
     const overview = r[9]
     const remarks = r[10]
 
-    termStr.split(/\s|,(?=[月火水木金土日])/).forEach((term, i, self) => {
+    termStr.split(/[\s,]/).forEach((term, i, self) => {
       if (term.match(/^(春|秋)([ABC]+)(.*)$/)) {
         const season = RegExp.$1
         const mod = RegExp.$2
@@ -93,7 +93,7 @@ export default function parse(csvData: string): KDBData {
       }
     })
 
-    periodStr.split('\n').forEach(period => {
+    periodStr.split(/\s|,(?=[月火水木金土日])/).forEach(period => {
       ;(period.match(/([月火水木金土日・]+)([1-6,-]+)/g) || []).forEach(() => {
         const dayStr = RegExp.$1
         const perStr = RegExp.$2

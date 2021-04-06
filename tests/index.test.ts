@@ -174,6 +174,32 @@ describe('parse', () => {
       }
       expect(parse(csv)).toMatchObject(parsed)
     }
+
+    // Separated by comma
+    {
+      const csv =
+        '"0000000","","","","","","水火1-6,土2-4","","","","","","","","0000000","",""'
+      const parsed: KDBData = {
+        '0000000': {
+          title: '',
+          termStr: '',
+          terms: [],
+          periodStr: '水火1-6,土2-4',
+          periods: [
+            [
+              [2, 3],
+              [0, 1, 2, 3, 4, 5],
+            ],
+            [[6], [1, 2, 3]],
+          ],
+          rooms: [],
+          instructors: [],
+          overview: '',
+          remarks: '',
+        },
+      }
+      expect(parse(csv)).toMatchObject(parsed)
+    }
   })
 
   test('Return empty array for unparsable term string', () => {
