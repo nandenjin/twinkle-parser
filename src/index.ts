@@ -136,6 +136,9 @@ export default function parse(csvData: string): KDBData {
     })
 
     // Normalization
+    // Sort terms
+    terms.sort()
+
     // Concat consequtive period expressions
     for (let i = 0; i < periods.length; i++) {
       const a = periods[i]
