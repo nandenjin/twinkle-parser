@@ -1,3 +1,20 @@
+# [0.3.0](https://github.com/nandenjin/twinkle-parser/compare/v0.2.0...v0.3.0) (2021-04-07)
+
+
+### Bug Fixes
+
+* Add normalization process ([3c9f807](https://github.com/nandenjin/twinkle-parser/commit/3c9f807834a4dfb79dca04abc384b99089899716))
+* automerge CI condition ([1143e8c](https://github.com/nandenjin/twinkle-parser/commit/1143e8cd49e999be91b574a09ab4f44db75096bf))
+* Not for terms but for periods ([3cde450](https://github.com/nandenjin/twinkle-parser/commit/3cde450597111ccc5f2ec7e41d0f3dd86a989c11))
+* Separate \s and ,[月火水木金土日]([#144](https://github.com/nandenjin/twinkle-parser/issues/144)) ([96ebe21](https://github.com/nandenjin/twinkle-parser/commit/96ebe215fdc04b00f7c6a23d992178c719673621))
+
+
+### Features
+
+* Support more fields ([38abfea](https://github.com/nandenjin/twinkle-parser/commit/38abfea58866673a2a408689da85b8b13a85a023))
+
+
+
 # [0.2.0](https://github.com/nandenjin/twinkle-parser/compare/v0.1.14...v0.2.0) (2021-01-03)
 
 ### Bug Fixes
