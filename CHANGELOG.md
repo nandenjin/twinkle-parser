@@ -3,9 +3,7 @@
 
 ### Bug Fixes
 
-* Add normalization process ([3c9f807](https://github.com/nandenjin/twinkle-parser/commit/3c9f807834a4dfb79dca04abc384b99089899716))
-* automerge CI condition ([1143e8c](https://github.com/nandenjin/twinkle-parser/commit/1143e8cd49e999be91b574a09ab4f44db75096bf))
-* Not for terms but for periods ([3cde450](https://github.com/nandenjin/twinkle-parser/commit/3cde450597111ccc5f2ec7e41d0f3dd86a989c11))
+* Add normalization process for terms ([3c9f807](https://github.com/nandenjin/twinkle-parser/commit/3c9f807834a4dfb79dca04abc384b99089899716))
 * Separate \s and ,[月火水木金土日]([#144](https://github.com/nandenjin/twinkle-parser/issues/144)) ([96ebe21](https://github.com/nandenjin/twinkle-parser/commit/96ebe215fdc04b00f7c6a23d992178c719673621))
 
 
