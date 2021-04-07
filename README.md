@@ -85,6 +85,15 @@ const data = parse('CSV string here') // -> KDBData
 
     "title": "Twinkle",
 
+    // Class type (defined value by original data)
+    "type": 1,
+
+    // Course unit
+    "unit": 1,
+
+    // Course target grades
+    "targets": [1, 2],
+
     // Terms & Modules
     // 0 = Spring A, 1 = Spring B, ...
     "termStr": "春AB",
@@ -108,6 +117,8 @@ const data = parse('CSV string here') // -> KDBData
     "overview": "",
     "remarks": ""
 
+    // Last update unix time
+    "updatedAt": 1583390263000
   }
 }
 ```

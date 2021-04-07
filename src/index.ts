@@ -11,6 +11,10 @@ export { KDBData, KDBCourse }
 
 export const FIELD_KEYS = [
   'title',
+  'type',
+  'unit',
+  'targets',
+
   'termStr',
   'terms',
 
@@ -22,6 +26,10 @@ export const FIELD_KEYS = [
 
   'overview',
   'remarks',
+
+  // 'auditor',
+  // 'requirements',
+  'updatedAt',
 ]
 
 /**
@@ -50,6 +58,9 @@ export default function parse(csvData: string): KDBData {
     if (id === '科目番号') continue
 
     const title = r[1]
+    const type = +r[2]
+    const unit = +r[3]
+    const targets = r[4].split('・').map(n => +n).filter(n => n > 0)
 
     const termStr = r[5]
     let terms: number[] = []
@@ -65,6 +76,10 @@ export default function parse(csvData: string): KDBData {
 
     const overview = r[9]
     const remarks = r[10]
+
+    // const auditor = r[11]
+    // const requirements = r[12]
+    const updatedAt = new Date(r[16] + '+9:00').getTime()
 
     termStr.split(/[\s,]/).forEach((term, i, self) => {
       if (term.match(/^(春|秋)([ABC]+)(.*)$/)) {
@@ -165,6 +180,10 @@ export default function parse(csvData: string): KDBData {
 
     output[id] = {
       title,
+      type,
+      unit,
+      targets,
+
       termStr,
       terms,
 
@@ -176,6 +195,9 @@ export default function parse(csvData: string): KDBData {
 
       overview,
       remarks,
+      // auditor,
+      // requirements,
+      updatedAt,
     }
   }
 
