@@ -29,7 +29,7 @@
   "devDependencies": {
     "@types/iconv": "^2.1.16",
     "@types/jest": "^26.0.3",
-    "@types/node": "^14.0.14",
+    "@types/node": "^15.0.1",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "eslint": "^7.3.1",
