@@ -733,10 +733,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/iconv@^2.1.16":
-  version "2.1.16"
-  resolved "https://registry.yarnpkg.com/@types/iconv/-/iconv-2.1.16.tgz#2b266c2e4c5425981e8ee1479bcb673b285ec88d"
-  integrity sha512-/O0bXwCim+hku9l6fjzG4lHj/wqRMJy0lpq4dd9/DeN8b9nDzaqzCb0mo7WoRm/CvJk1DTJ9F266UHqwvOzf1g==
+"@types/iconv@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/iconv/-/iconv-3.0.0.tgz#1b1b3e49ac1f6ee785ba41fd6e73ddbdd3262432"
+  integrity sha512-A5P3RkD43HFJpF10SKPZN1eYXjIqeHHgtI/xK8zt/m6HDWe70LBcO3Uw+VHI5lfidgY1DBYn6NMZ4xvsKMd+MQ==
   dependencies:
     "@types/node" "*"
 
