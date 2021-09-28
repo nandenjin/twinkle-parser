@@ -1,4 +1,4 @@
-import csvParse from 'csv-parse/lib/sync'
+import parseCSV from 'csv-parse/lib/sync'
 
 // Import data types
 import { KDBData, KDBCourse } from '../types'
@@ -39,7 +39,7 @@ export const FIELD_KEYS = [
 export default function parse(csvData: string): KDBData {
   const output: KDBData = {}
 
-  const data = csvParse(csvData) as string[][]
+  const data = parseCSV(csvData) as string[][]
 
   const exceptions: {
     term: string[]
