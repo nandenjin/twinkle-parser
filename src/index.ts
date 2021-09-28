@@ -5,7 +5,6 @@ import { KDBData, KDBCourse } from '../types'
 
 // Import utils
 import * as arrayUtil from './util/array'
-import { repairCSV } from './util/csv'
 
 // Export data types
 export { KDBData, KDBCourse }
@@ -32,7 +31,7 @@ export const FIELD_KEYS = [
 export default function parse(csvData: string): KDBData {
   const output: KDBData = {}
 
-  const data = parseCSV(repairCSV(csvData)) as string[][]
+  const data = parseCSV(csvData) as string[][]
 
   const exceptions: {
     term: string[]

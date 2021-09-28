@@ -7,6 +7,7 @@ const parseArgs = require('minimist')
 const consola = require('consola')
 const iconv = require('iconv-lite')
 const { default: parse, FIELD_KEYS } = require('../dist/index.js')
+const { repairCSV } = require('../dist/util/csv.js')
 
 const argv = parseArgs(process.argv.slice(2))
 
@@ -51,9 +52,17 @@ if (!filename) {
   process.exit(1)
 }
 
-const csvData = iconv
+let csvData = iconv
   .decode(fs.readFileSync(filename), 'Shift_JIS')
   .replace(/\s+$/gm, '')
+
+if (csvData.match(/^\s*"/)) {
+  csvData = repairCSV(csvData)
+} else {
+  consola.warn(
+    'Unexpected CSV format. Some optional steps may be skipped (ex: CSV repairment)'
+  )
+}
 
 const parsed = parse(csvData)
 const result = {}
