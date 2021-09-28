@@ -10,6 +10,9 @@ describe('CLI', () => {
     const parsed: KDBData = {
       AB10001: {
         title: '授業名',
+        type: 1,
+        unit: 2,
+        targets: [2],
         termStr: '春AB',
         terms: [0, 1],
         periodStr: '火34',
@@ -18,9 +21,13 @@ describe('CLI', () => {
         instructors: ['教員名'],
         overview: 'ここには授業概要が入る。',
         remarks: 'ここには備考が入る。',
+        updatedAt: 1583390263000
       },
       AB10501: {
         title: '授業名',
+        type: 1,
+        unit: 2,
+        targets: [2],
         termStr: '秋BC',
         terms: [4, 5],
         periodStr: '木1-6',
@@ -29,6 +36,7 @@ describe('CLI', () => {
         instructors: ['教員名1', '教員名2'],
         overview: 'ここには授業概要が入る。',
         remarks: 'ここには備考が入る。',
+        updatedAt: 1583390263000
       },
     }
 
@@ -78,6 +86,9 @@ describe('CLI', () => {
     const parsed: KDBData = {
       AB10001: {
         title: '授業名',
+        type: 1,
+        unit: 2,
+        targets: [2],
         termStr: '春AB',
         terms: [0, 1],
         periodStr: '火34',
@@ -86,9 +97,13 @@ describe('CLI', () => {
         instructors: ['教員名'],
         overview: 'ここには授業概要が入る。',
         remarks: 'ここには備考が入る。',
+        updatedAt: 1583390263000
       },
       AB10501: {
         title: '授業名',
+        type: 1,
+        unit: 2,
+        targets: [2],
         termStr: '秋BC',
         terms: [4, 5],
         periodStr: '木1-6',
@@ -97,6 +112,7 @@ describe('CLI', () => {
         instructors: ['教員名1', '教員名2'],
         overview: 'ここには授業概要が入る。',
         remarks: 'ここには備考が入る。',
+        updatedAt: 1583390263000
       },
     }
 

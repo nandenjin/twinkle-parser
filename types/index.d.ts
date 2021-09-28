@@ -4,6 +4,10 @@ export interface KDBData {
 
 export interface KDBCourse {
   title: string
+  type: number,
+  unit: number,
+  targets: number[],
+
   termStr: string
   periodStr: string
   terms: number[]
@@ -11,5 +15,6 @@ export interface KDBCourse {
   rooms: string[]
   instructors: string[]
   overview: string
-  remarks: string
+  remarks: string,
+  updatedAt: number
 }

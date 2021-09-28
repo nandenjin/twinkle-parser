@@ -1,17 +1,18 @@
 <div align="center">
+  <img width="200" src="https://storage.googleapis.com/twinkle-resouces/common/bldg-cl.png" alt="">
   <h1>twinkle-parser</h1>
   <p>
     <a href="https://www.npmjs.com/package/twinkle-parser" target="_blank" rel="noopener">
-      <img alt="npm" src="https://img.shields.io/npm/v/twinkle-parser.svg">
+      <img alt="npm version" src="https://img.shields.io/npm/v/twinkle-parser.svg?style=flat-square">
     </a>
     <a href="https://codeclimate.com/github/nandenjin/twinkle-parser/maintainability">
-      <img src="https://api.codeclimate.com/v1/badges/77e6012b3b82e41c25be/maintainability" />
+      <img alt="Code Climate maintainability" src="https://img.shields.io/codeclimate/maintainability/nandenjin/twinkle-parser?style=flat-square">
     </a>
     <a href="https://codecov.io/gh/nandenjin/twinkle-parser">
-      <img src="https://codecov.io/gh/nandenjin/twinkle-parser/branch/dev/graph/badge.svg" />
+      <img alt="Codecov" src="https://img.shields.io/codecov/c/gh/nandenjin/twinkle-parser?style=flat-square">
     </a>
     <span>
-      <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat">
+      <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square">
     </span>
   </p>
   <p>Parse CSV from https://kdb.tsukuba.ac.jp to structured JSON.</p>
@@ -74,6 +75,7 @@ const data = parse('CSV string here') // -> KDBData
 | `-p` / `--pretty`           | Prettify json output.                                             |
 | `--fields`                  | Fields to be included (comma-separated, specifing all if not set) |
 | `-h` / `--help`             | Print help & usage.                                               |
+| `-v` / `--version`          | Print version info
 
 ## Output Format
 
@@ -82,6 +84,15 @@ const data = parse('CSV string here') // -> KDBData
   "COURSE_ID": {
 
     "title": "Twinkle",
+
+    // Class type (defined value by original data)
+    "type": 1,
+
+    // Course unit
+    "unit": 1,
+
+    // Course target grades
+    "targets": [1, 2],
 
     // Terms & Modules
     // 0 = Spring A, 1 = Spring B, ...
@@ -106,6 +117,8 @@ const data = parse('CSV string here') // -> KDBData
     "overview": "",
     "remarks": ""
 
+    // Last update unix time
+    "updatedAt": 1583390263000
   }
 }
 ```
