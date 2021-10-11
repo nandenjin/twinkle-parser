@@ -1,3 +1,20 @@
+# [0.4.0](https://github.com/nandenjin/twinkle-parser/compare/v0.3.5...v0.4.0) (2021-10-10)
+
+
+### Bug Fixes
+
+* Invalid regex for already-escaped quotations ([a42e0f1](https://github.com/nandenjin/twinkle-parser/commit/a42e0f1a3dcff98b2b813f1f0150686169ed7e59))
+
+
+### Features
+
+* Add repairCSV() ([03b52e5](https://github.com/nandenjin/twinkle-parser/commit/03b52e5979b526dab6dc8cee3a47ba583a140f71))
+* Repair csvStrings before parsing ([#138](https://github.com/nandenjin/twinkle-parser/issues/138)) ([60fc70b](https://github.com/nandenjin/twinkle-parser/commit/60fc70b20ed1b365ededad747883a58fe4091492))
+* Rewrite repair function ([b645ceb](https://github.com/nandenjin/twinkle-parser/commit/b645ceb28661b0bbb92ab39f373be06ed14d2dba))
+* Skip repairment for unsupported CSV format ([7545d93](https://github.com/nandenjin/twinkle-parser/commit/7545d9376897985c873aefdeef1bf54cf204036a))
+
+
+
 ## [0.3.5](https://github.com/nandenjin/twinkle-parser/compare/v0.3.4...v0.3.5) (2021-09-10)
 
 
