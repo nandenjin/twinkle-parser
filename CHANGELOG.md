@@ -1,3 +1,7 @@
+## [0.4.1](https://github.com/nandenjin/twinkle-parser/compare/v0.4.0...v0.4.1) (2021-11-10)
+
+
+
 # [0.4.0](https://github.com/nandenjin/twinkle-parser/compare/v0.3.5...v0.4.0) (2021-10-10)
 
 
