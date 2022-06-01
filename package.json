@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "consola": "^2.15.0",
-    "csv-parse": "^4.4.5",
+    "csv-parse": "^5.1.0",
     "iconv-lite": "^0.6.2",
     "minimist": "^1.2.0"
   },
