@@ -1,3 +1,20 @@
+## [0.4.6](https://github.com/nandenjin/twinkle-parser/compare/v0.4.5...v0.4.6) (2022-06-12)
+
+
+### Bug Fixes
+
+* typo ([b0c595d](https://github.com/nandenjin/twinkle-parser/commit/b0c595d2e9f3489f78446db75e4e28f35bf1cd3b))
+
+
+### Reverts
+
+* Revert "Revert "chore: release v0.4.5 (#248)" (#249)" (#262) ([411f7dd](https://github.com/nandenjin/twinkle-parser/commit/411f7dd2ec774c144e3beef6b379046eed75bb27)), closes [#248](https://github.com/nandenjin/twinkle-parser/issues/248) [#249](https://github.com/nandenjin/twinkle-parser/issues/249) [#262](https://github.com/nandenjin/twinkle-parser/issues/262)
+* Revert "chore: release v0.4.5 (#248)" (#249) ([f11f1d0](https://github.com/nandenjin/twinkle-parser/commit/f11f1d034d5366421517ae17fc933406fafae330)), closes [#248](https://github.com/nandenjin/twinkle-parser/issues/248) [#249](https://github.com/nandenjin/twinkle-parser/issues/249)
+* Revert "chore: release v0.4.5 (#238)" (#247) ([77ec4e2](https://github.com/nandenjin/twinkle-parser/commit/77ec4e21d1bcb6da58dce18b89bc25a49b526218)), closes [#238](https://github.com/nandenjin/twinkle-parser/issues/238) [#247](https://github.com/nandenjin/twinkle-parser/issues/247)
+* Revert "chore(deps-dev): Bump eslint from 7.32.0 to 8.10.0 (#233)" (#240) ([bef7b54](https://github.com/nandenjin/twinkle-parser/commit/bef7b54d11c4310be4c6fbe7279d1cd7a2b2f10d)), closes [#233](https://github.com/nandenjin/twinkle-parser/issues/233) [#240](https://github.com/nandenjin/twinkle-parser/issues/240)
+
+
+
 ## [0.4.5](https://github.com/nandenjin/twinkle-parser/compare/v0.4.4...v0.4.5) (2022-04-02)
 
 
