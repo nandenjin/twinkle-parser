@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from '@jest/types'
+
+const config: Config.InitialOptions = {
   moduleFileExtensions: ['ts', 'js'],
   transform: {
     '^.+\\.ts$': 'ts-jest',
@@ -10,3 +12,5 @@ module.exports = {
   },
   testMatch: ['**/tests/**/*.test.ts'],
 }
+
+export default config
