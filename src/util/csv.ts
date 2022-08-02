@@ -50,7 +50,7 @@ export const repairCSV = (csvString: string): string => {
 
     while (line.length > 0) {
       // Detect the next segment
-      let check = line.match(/^"(.*?)"(,|$)/)
+      const check = line.match(/^"(.*?)"(,|$)/)
       if (check) {
         const content = check[1]
         const delimiter = check[2] || ''
