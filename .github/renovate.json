@@ -4,5 +4,12 @@
   "automerge": true,
   "automergeType": "branch",
   "stabilityDays": 7,
-  "lockFileMaintenance": { "enabled": true }
+  "lockFileMaintenance": { "enabled": true },
+  "rangeStrategy": "replace",
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "rangeStrategy": "pin"
+    }
+  ]
 }
