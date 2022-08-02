@@ -1,4 +1,4 @@
-import parseCSV from 'csv-parse/lib/sync'
+import { parse as parseCSV } from 'csv-parse/sync'
 
 // Import data types
 import { KDBData, KDBCourse } from '../types'
@@ -60,7 +60,10 @@ export default function parse(csvData: string): KDBData {
     const title = r[1]
     const type = +r[2]
     const unit = +r[3]
-    const targets = r[4].split('・').map(n => +n).filter(n => n > 0)
+    const targets = r[4]
+      .split('・')
+      .map(n => +n)
+      .filter(n => n > 0)
 
     const termStr = r[5]
     let terms: number[] = []
