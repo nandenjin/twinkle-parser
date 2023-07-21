@@ -12,6 +12,13 @@
 
 
 
+## [0.4.14](https://github.com/nandenjin/twinkle-parser/compare/v0.4.13...v0.4.14) (2023-07-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency consola to v3 ([2d55f27](https://github.com/nandenjin/twinkle-parser/commit/2d55f27972861077d318be4e0c9a4ebb4df852bf))
+
 ## [0.4.14](https://github.com/nandenjin/twinkle-parser/compare/v0.4.13...v0.4.14) (2023-02-10)
 
 
