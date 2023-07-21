@@ -32,6 +32,9 @@ describe('repairCsv', () => {
 
       // A cell with missing all of its double quotation
       ['"abc",def', '"abc","def"'],
+
+      // The first cell with missing its first double quotation
+      ['abc"', '"abc"'],
     ]
 
     for (const s of csvStrings) {
