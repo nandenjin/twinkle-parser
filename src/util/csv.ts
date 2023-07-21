@@ -62,6 +62,7 @@ export const repairCSV = (csvString: string): string => {
         line = line.slice(check[0].length)
       } else {
         // Check if the line contains segments after current position
+        // e.g. '"abc",def"' (the cell contains double quotation with a comma as a part of its content, but it is not escaped)
         const lostCheck = line.match(/^(.+?)"(,|$)/)
         if (lostCheck) {
           // Undo the last segment, remove the first quotation and concat to current one
@@ -73,8 +74,11 @@ export const repairCSV = (csvString: string): string => {
 
           // Remove proceeded part from the line
           line = line.slice(lostCheck[0].length)
+
+          // Finally: '"abc"",def"'
         } else {
           // Regard all of the rest content is a whole cell
+          // e.g. '"abc",def' (the cell is missing all of its double quotation)
           segments.push(`"${escape(line)}"`)
 
           // Go to next line
