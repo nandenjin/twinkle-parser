@@ -23,6 +23,9 @@ jobs:
           else
             npm install
           fi
+      - run: |
+          git config user.name  "GitHub Actions"
+          git config user.email "action@github.com"
       - run: npx shipjs trigger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
