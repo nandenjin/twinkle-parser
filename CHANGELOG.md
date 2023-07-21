@@ -1,3 +1,17 @@
+## [0.4.15](https://github.com/nandenjin/twinkle-parser/compare/v0.4.14...v0.4.15) (2023-07-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency consola to v3 ([2d55f27](https://github.com/nandenjin/twinkle-parser/commit/2d55f27972861077d318be4e0c9a4ebb4df852bf))
+
+
+### Reverts
+
+* Revert "chore: release v0.4.15" (#291) ([ec163cd](https://github.com/nandenjin/twinkle-parser/commit/ec163cd7512ede6eff07d02703c850fded80e643)), closes [#291](https://github.com/nandenjin/twinkle-parser/issues/291) [#290](https://github.com/nandenjin/twinkle-parser/issues/290)
+
+
+
 ## [0.4.14](https://github.com/nandenjin/twinkle-parser/compare/v0.4.13...v0.4.14) (2023-02-10)
 
 
