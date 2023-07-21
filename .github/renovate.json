@@ -1,8 +1,6 @@
 {
   "extends": ["config:base"],
   "labels": ["dependencies"],
-  "automerge": true,
-  "automergeType": "branch",
   "stabilityDays": 7,
   "lockFileMaintenance": { "enabled": true },
   "rangeStrategy": "replace",
@@ -10,6 +8,17 @@
     {
       "matchDepTypes": ["devDependencies"],
       "rangeStrategy": "pin"
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest",
+        "lockFileMaintenance"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
     }
   ]
 }
