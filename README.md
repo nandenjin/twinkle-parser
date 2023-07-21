@@ -79,7 +79,7 @@ const data = parse('CSV string here') // -> KDBData
 
 ## Output Format
 
-```js
+```jsonc
 {
   "COURSE_ID": {
 
@@ -117,13 +117,13 @@ const data = parse('CSV string here') // -> KDBData
     "overview": "",
     "remarks": ""
 
-    // Last update unix time
+    // Last update in unix time
     "updatedAt": 1583390263000
   }
 }
 ```
 
-## TypeScipt Support
+## TypeScript Support
 
 TypeScript supported! 🎉
 
