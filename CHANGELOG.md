@@ -12,6 +12,13 @@
 
 
 
+## [0.4.16](https://github.com/nandenjin/twinkle-parser/compare/v0.4.15...v0.4.16) (2023-09-06)
+
+
+### Bug Fixes
+
+* Support shifted column ([#298](https://github.com/nandenjin/twinkle-parser/issues/298)) ([997c57f](https://github.com/nandenjin/twinkle-parser/commit/997c57fd3266c82898f67af2ca2f5684673c8ffa))
+
 ## [0.4.14](https://github.com/nandenjin/twinkle-parser/compare/v0.4.13...v0.4.14) (2023-02-10)
 
 
