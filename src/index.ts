@@ -84,7 +84,7 @@ export default function parse(csvData: string): KDBData {
 
     // const auditor = r[11]
     // const requirements = r[12]
-    const updatedAt = new Date(r[16] + '+9:00').getTime()
+    const updatedAt = new Date(r[18] + '+9:00').getTime()
 
     termStr.split(/[\s,]/).forEach((term, i, self) => {
       if (term.match(/^(春|秋)([ABC]+)(.*)$/)) {
