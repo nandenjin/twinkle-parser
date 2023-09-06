@@ -55,7 +55,9 @@ export default function parse(csvData: string): KDBData {
     const id = r[0]
 
     // Skip headline
-    if (id === '科目番号') continue
+    if (!id.match(/^[A-Z0-9]{7}$/)) {
+      continue
+    }
 
     const title = r[1]
     const type = +r[2]

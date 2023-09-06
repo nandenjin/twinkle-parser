@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import parseArgs from 'minimist'
 import consola from 'consola'
+import xlsx from 'xlsx'
 import iconv from 'iconv-lite'
 import { default as parse, FIELD_KEYS, KDBCourse } from '.'
 import { repairCSV } from './util/csv'
@@ -21,7 +22,7 @@ export default function (pkg: PackageJSON, _argv: string[]): number {
   if (argv.h || argv.help) {
     consola.log(
       `* twinkle-parser
-Usage: twinkle-parser PATH_TO_SOURCE_CSV
+Usage: twinkle-parser PATH_TO_SOURCE_FILE
 
 Options:
 -o FILENAME / --out FILENAME : Export JSON to specified file
@@ -62,16 +63,28 @@ Options:
     return 1
   }
 
-  let csvData = iconv
-    .decode(fs.readFileSync(filename), 'Shift_JIS')
-    .replace(/\s+$/gm, '')
+  let csvData: string
 
-  if (csvData.match(/^\s*"/)) {
-    csvData = repairCSV(csvData)
-  } else {
-    consola.warn(
-      'Unexpected CSV format. Some optional steps may be skipped (ex: CSV repairment)'
-    )
+  // Format: XLSX
+  if (filename.match(/\.xlsx$/)) {
+    const workbook = xlsx.readFile(filename)
+    const sheetName = workbook.SheetNames[0]
+    csvData = xlsx.utils.sheet_to_csv(workbook.Sheets[sheetName])
+  }
+
+  // Format: CSV
+  else {
+    csvData = iconv
+      .decode(fs.readFileSync(filename), 'Shift_JIS')
+      .replace(/\s+$/gm, '')
+
+    if (csvData.match(/^\s*"/)) {
+      csvData = repairCSV(csvData)
+    } else {
+      consola.warn(
+        'Unexpected CSV format. Some optional steps may be skipped (ex: CSV repairment)'
+      )
+    }
   }
 
   const parsed = parse(csvData)
