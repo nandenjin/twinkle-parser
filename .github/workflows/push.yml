@@ -1,9 +1,9 @@
 name: CI
 on:
   push:
-    branches: [dev, 'renovate/*']
+    branches: [dev, 'for-v1', 'renovate/*']
   pull_request:
-    branches: [dev]
+    branches: [dev, 'for-v1']
 
 jobs:
   build:
