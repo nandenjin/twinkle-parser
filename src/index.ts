@@ -55,7 +55,7 @@ export default function parse(csvData: string): KDBData {
     const id = r[0]
 
     // Skip headline
-    if (!id.match(/^[a-z0-9]+$/i)) {
+    if (!id.match(/^[A-Z0-9]{7}$/)) {
       continue
     }
 
