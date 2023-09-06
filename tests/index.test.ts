@@ -352,4 +352,14 @@ describe('parse', () => {
     }
     expect(parse(csv)).toMatchObject(parsed)
   })
+
+  test('Skip headlines', () => {
+    const csv = [
+      '"This","is","not","a","data","line"',
+      '"And","the","next","is","empty","line"',
+      '"","","","","",""',
+    ].join('\n')
+    const parsed: KDBData = {}
+    expect(parse(csv)).toMatchObject(parsed)
+  })
 })
