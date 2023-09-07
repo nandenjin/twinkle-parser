@@ -11,6 +11,7 @@ const config: Config.InitialOptions = {
     ],
   },
   testMatch: ['**/tests/**/*.test.ts'],
+  coveragePathIgnorePatterns: ['/node_modules/', '/tests/'],
 }
 
 export default config
