@@ -27,7 +27,7 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "@types/iconv": "3.0.1",
+    "@types/iconv": "3.0.2",
     "@types/jest": "29.5.5",
     "@types/node": "18.18.0",
     "@typescript-eslint/eslint-plugin": "6.7.3",
