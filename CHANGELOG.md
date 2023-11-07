@@ -1,3 +1,13 @@
+# Changelog
+
+## [0.4.16](https://github.com/nandenjin/twinkle-parser/compare/v0.4.15...v0.4.16) (2023-09-06)
+
+
+### Bug Fixes
+
+* Support shifted column ([#298](https://github.com/nandenjin/twinkle-parser/issues/298)) ([997c57f](https://github.com/nandenjin/twinkle-parser/commit/997c57fd3266c82898f67af2ca2f5684673c8ffa))
+
+
 ## [0.4.15](https://github.com/nandenjin/twinkle-parser/compare/v0.4.14...v0.4.15) (2023-07-21)
 
 
@@ -9,15 +19,6 @@
 ### Reverts
 
 * Revert "chore: release v0.4.15" (#291) ([ec163cd](https://github.com/nandenjin/twinkle-parser/commit/ec163cd7512ede6eff07d02703c850fded80e643)), closes [#291](https://github.com/nandenjin/twinkle-parser/issues/291) [#290](https://github.com/nandenjin/twinkle-parser/issues/290)
-
-
-
-## [0.4.16](https://github.com/nandenjin/twinkle-parser/compare/v0.4.15...v0.4.16) (2023-09-06)
-
-
-### Bug Fixes
-
-* Support shifted column ([#298](https://github.com/nandenjin/twinkle-parser/issues/298)) ([997c57f](https://github.com/nandenjin/twinkle-parser/commit/997c57fd3266c82898f67af2ca2f5684673c8ffa))
 
 ## [0.4.14](https://github.com/nandenjin/twinkle-parser/compare/v0.4.13...v0.4.14) (2023-02-10)
 
