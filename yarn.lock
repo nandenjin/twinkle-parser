@@ -708,10 +708,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/iconv@3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@types/iconv/-/iconv-3.0.3.tgz#da062f3f03daa023ec3533a928b202dfe592f1b8"
-  integrity sha512-0D9hr4COgf7o5tCPnoJ2CrzQiw4qmISCIAue9lZBuEc3e72A5gI78/MbCoOkr48kgV/4TcTYhUKG8gFAuOX2lA==
+"@types/iconv@3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@types/iconv/-/iconv-3.0.4.tgz#733dc80bb3ea946db069f177b47db65672b0948c"
+  integrity sha512-bk+twLWL20lSbLw65vMUK1oy9dVEDMytQczaxqQs6p1MjY0ogiOidSLPsbfyQ04HxN9spZ9FPYkXZuCyw5C7Nw==
   dependencies:
     "@types/node" "*"
 
