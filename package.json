@@ -7,6 +7,9 @@
   "bin": {
     "twinkle-parser": "./bin/twinkle-parser.js"
   },
+  "engines": {
+    "node": "20"
+  },
   "scripts": {
     "start": "npm run parse",
     "parse": "node bin/twinkle-parser.js",
