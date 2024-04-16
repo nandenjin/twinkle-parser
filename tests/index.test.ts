@@ -1,4 +1,3 @@
-/* eslint-disable no-lone-blocks */
 import parse, { KDBData } from '../src'
 
 describe('parse', () => {
