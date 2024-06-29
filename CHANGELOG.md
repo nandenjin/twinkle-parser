@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.4.17 (2024-06-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency consola to v3 ([2d55f27](https://github.com/nandenjin/twinkle-parser/commit/2d55f27972861077d318be4e0c9a4ebb4df852bf))
+* Support shifted column ([#298](https://github.com/nandenjin/twinkle-parser/issues/298)) ([997c57f](https://github.com/nandenjin/twinkle-parser/commit/997c57fd3266c82898f67af2ca2f5684673c8ffa))
+
+
+### Miscellaneous Chores
+
+* release 0.4.17 ([fb297b4](https://github.com/nandenjin/twinkle-parser/commit/fb297b4e8be6d36d354c6d64c02534479e71f616))
+
 ## [0.4.16](https://github.com/nandenjin/twinkle-parser/compare/v0.4.15...v0.4.16) (2023-09-06)
 
 
