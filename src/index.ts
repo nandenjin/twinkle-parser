@@ -123,7 +123,6 @@ export default function parse(csvData: string): KDBData {
 
         let pstr = perStr
 
-        // eslint-disable-next-line no-constant-condition
         while (true) {
           if (pstr.match(/^,?([1-6])-([1-6]),?/)) {
             const s = +RegExp.$1 - 1

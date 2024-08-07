@@ -10,7 +10,7 @@ export function isEqual(a: any, b: any): boolean {
   try {
     assert.deepStrictEqual(a, b)
     return true
-  } catch (e) {
+  } catch {
     return false
   }
 }
