@@ -34,7 +34,7 @@
     "@types/iconv": "3.0.4",
     "@types/jest": "29.5.13",
     "@types/minimist": "1.2.5",
-    "@types/node": "20.16.12",
+    "@types/node": "20.16.13",
     "eslint": "9.13.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jest": "28.8.3",
