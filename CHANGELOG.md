@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.17 (2025-05-31)
+
+
+### Miscellaneous Chores
+
+* release 0.4.17 ([fb297b4](https://github.com/nandenjin/twinkle-parser/commit/fb297b4e8be6d36d354c6d64c02534479e71f616))
+
 ## 0.4.17 (2024-06-29)
 
 
