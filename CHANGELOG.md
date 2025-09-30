@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.18](https://github.com/nandenjin/twinkle-parser/compare/v0.4.17...v0.4.18) (2025-09-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency csv-parse to v6 ([#333](https://github.com/nandenjin/twinkle-parser/issues/333)) ([aa813de](https://github.com/nandenjin/twinkle-parser/commit/aa813de91d46f295fcb97647bccc99a33fcf03ec))
+* **deps:** update dependency iconv-lite to ^0.7.0 ([bcf8509](https://github.com/nandenjin/twinkle-parser/commit/bcf85097b937c121fb31575c175d04e33e12b65a))
+
 ## 0.4.17 (2025-05-31)
 
 
