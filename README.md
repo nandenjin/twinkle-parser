@@ -26,9 +26,6 @@ npx twinkle-parser data_from_kdb.csv
 # Install with NPM
 npm install -g twinkle-parser
 
-# Install with yarn
-yarn add --global twinkle-parser
-
 # Then
 twinkle-parser data_from_kdb.csv
 ```
@@ -38,10 +35,10 @@ twinkle-parser data_from_kdb.csv
 ```shell
 # * Inside repo directory
 # Install dependencies
-yarn
+npm install
 
 # Parse
-yarn run parse data_from_kdb.csv
+npm run parse data_from_kdb.csv
 ```
 
 ### As API
@@ -49,9 +46,6 @@ yarn run parse data_from_kdb.csv
 ```shell
 # Install with NPM
 npm install twinkle-parser
-
-# Install with yarn
-yarn add twinkle-parser
 ```
 
 ```js

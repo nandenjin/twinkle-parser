@@ -18,13 +18,13 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
-          cache: yarn
+          cache: npm
 
       - name: Install and build
-        run: yarn --frozen-lockfile
+        run: npm ci
 
       - name: Lint
-        run: yarn run lint
+        run: npm run lint
 
   test:
     name: Test
@@ -38,13 +38,13 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
-          cache: yarn
+          cache: npm
 
       - name: Install dependencies and build
-        run: yarn --frozen-lockfile
+        run: npm ci
 
       - name: Run tests
-        run: yarn run test --coverage
+        run: npm run test -- --coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
